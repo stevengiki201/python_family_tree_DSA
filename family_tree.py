@@ -29,7 +29,7 @@ def count_females(family):
 def main_menu():
     global member
     while True:
-        title="FAmily tree system management".center(50,"*")
+        title="Family tree system management".center(50,"*")
         print(title)
         print("*"*len(title))
         print("\n \n")
@@ -78,5 +78,6 @@ def main_menu():
             print("Invaild choice please try again")
     
 if __name__ == "__main__":
-    main()
+    main_menu()
+
 
