@@ -1,12 +1,12 @@
 def family_tree():
     members={
-        "me": {"father": "Olaf", "mother": "Lili","gender":"male"},
-        "olaf": {"father": "Lars", "mother": "Kate","gender":"male"},
-        "lili": {"father": "Carl", "mother": "Emma","gender":"female"},
-        "lars": {"father": "top parent", "mother": "top parent","gender":"male"},
-        "kate": {"father": "top parent", "mother": "top parent", "gender":"female"},
-        "carl": {"father": "top parent", "mother": "top parent", "gender":"male"},
-        "emma": {"father": "top parent", "mother": "top parent","gender":"female"}}
+        "me": {"father": "olaf", "mother": "lili","gender":"male"},
+        "olaf": {"father": "lars", "mother": "kate","gender":"male"},
+        "lili": {"father": "carl", "mother": "emma","gender":"female"},
+        "lars": {"father": "", "mother": "","gender":"male"},
+        "kate": {"father": "", "mother": "", "gender":"female"},
+        "carl": {"father": "", "mother": "", "gender":"male"},
+        "emma": {"father": "", "mother":"","gender":"female"}}
     return members
 
 def find_father(name, family):
@@ -57,7 +57,19 @@ def main_menu():
             mother = find_mother(sibling_name, family_tree())
             print(f"The mother of {sibling_name} is {mother}")
         elif choice == 4:
-            continue
+            parent_name=input('Enter parent name: '.lower())
+            child_name=""
+            for key, value in family_tree().items():
+                mother = value['mother']
+                father = value['father']
+                if parent_name==father or parent_name ==mother:
+                    child_name=key
+                    print(f"The child is {child_name}")
+                    break
+            if not child_name:
+                print("No such child in family tree")
+
+
 
 
             
