@@ -51,6 +51,8 @@ def main_menu():
             print(f"The father of {sibling_name} is {father}")
         elif choice == 3:
             print("Finding Mother")
+            for member in family_tree().keys():
+                print(member.center(100))
             sibling_name = input("Enter the name to find the mother: ")
             mother = find_mother(sibling_name, family_tree())
             print(f"The mother of {sibling_name} is {mother}")
@@ -79,5 +81,6 @@ def main_menu():
     
 if __name__ == "__main__":
     main_menu()
+
 
 
