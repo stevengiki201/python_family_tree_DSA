@@ -14,6 +14,7 @@ def find_father(name, family):
 def find_mother(name, family):
     return family.get(name, {}).get("mother", "not found in the  family tree so no such child")
 def find_siblings(name, family):
+    #Just find yourself the siblings ...................
     pass  
 def count_members(family):
     return len(family)
@@ -78,3 +79,4 @@ def main_menu():
     
 if __name__ == "__main__":
     main()
+
